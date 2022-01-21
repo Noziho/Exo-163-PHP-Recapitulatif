@@ -26,7 +26,7 @@ echo "<br><br>";
 /*###############################################*/
 
 // Écrivez le test qui vérifie la question suivante : (utilisez un seul if)
-echo "1.Est-ce que c'est un animal fait l'affaire ? ";
+echo "1.Est-ce que c'est un animal qui fait l'affaire ? ";
 echo "<br>";
 echo "Je veux un chien ou chat couleur marron avec des yeux verts ";
 echo "<br>";
@@ -35,14 +35,13 @@ $animal = "Chat";
 $vivant = true;
 $couleur = "Marron";
 $yeux = "Vert";
-
-/** remplacer le chiffre 0 par les bonnes conditions **/
-if( 0 ){
-  echo 'Oui';
+if ($animal === "Chien" || $animal=== "Chat" && $couleur === "Marron" && $yeux === "Vert" && $vivant === true) {
+    echo "Oui";
 }
 else {
-  echo 'Non';
+    echo "Non";
 }
+
 echo "<br><br>";
 
 
@@ -58,7 +57,8 @@ $couleur = "Blanc";
 $yeux = "Vert";
 
 /** remplacer le chiffre 0 par les bonnes conditions **/
-if( 0 ){
+if( $vivant === true && $yeux === "Vert" && $couleur === "Marron" && $animal === "Chat"
+    ||$vivant === true && $yeux === "Vert" && $couleur === "Blanc" && $animal === "Chat" ){
   echo 'Oui';
 }
 else {
@@ -79,11 +79,12 @@ $couleur = "Noir";
 $yeux = "Vert";
 
 /** remplacer le chiffre 0 par les bonnes conditions **/
-if( 0 ){
-  echo 'Oui';
+if( $vivant === false || $vivant === true && $yeux === "Bleus" && $couleur === "Noir" || $couleur === "Marrons" && $animal === "Chien"
+    ||$vivant === true && $yeux === "Bleus" && $couleur === "Orange" && $animal === "Chat" ){
+    echo 'Oui';
 }
 else {
-  echo 'Non';
+    echo 'Non';
 }
 echo "<br><br>";
 //----------------------------------------
