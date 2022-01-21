@@ -13,7 +13,9 @@
      ?>
      <ul>
        <?php
-          // TODO Display the students here, each student inside a new <li> element
+          foreach ($students as $student) {?>
+              <li><?= $student ?></li><?php
+          }
        ?>
      </ul>
      <hr>
@@ -23,29 +25,39 @@
        <!-- Instructions : Créer la liste de jour (en chiffres), de mois (en chiffres) et d'année en PHP. -->
        <label for="day">Day</label>
        <select  name="day" id="day"><?php
-           // TODO list of day ?>
+           for ($i = 0; $i <= 31; $i++) {?>
+           <option value="<?= $i ?>"><?= $i ?></option><?php
+           } ?>
        </select>
        <label for="month">Month</label>
        <select  name="month" id="month"><?php
-           // TODO list of month ?>
+           for ($i = 0; $i <= 12; $i++) {?>
+               <option value="<?= $i ?>"><?= $i ?></option><?php
+           } ?>
        </select>
        <label for="year">Year</label>
        <select  name="year" id="year"><?php
-           // TODO list of year ?>
+           for ($i = 1950; $i <= 2022; $i++) {?>
+               <option value="<?= $i ?>"><?= $i ?></option><?php
+           } ?>
        </select>
      </form>
      <hr>
      <!-- TODO Instruction : Afficher ce bloc que si dans l'URL il y'a une variable sexe et que ça valeur vaut "fille" -->
-     <p>
-       Je suis une fille
-     </p>
-     <!-- TODO Instruction : Afficher ce bloc que si dans l'URL il y'a une variable sexe et que ça valeur vaut "garçon" -->
-     <p>
-       Je suis un garçon
-     </p>
-     <!-- TODO Instruction : Afficher ce bloc dans les autres cas -->
-     <p>
-       Je suis indéfini
-     </p>
+    <?php
+        foreach ($_GET as $param => $value) {
+            if ($value === "fille") {?>
+                <p>Je suis une fille</p><?php
+            }
+            elseif ($value === "garçon") {?>
+                <p>Je suis un garçon</p><?php
+            }
+            else {?>
+                <p>Je suis indéfini</p><?php
+            }
+        }
+    ?>
+
+
   </body>
 </html>
